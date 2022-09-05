@@ -1,0 +1,125 @@
+/* ================== */
+/* CUSTOM PROPERTIES */
+/* ================ */
+
+:root {
+    --clr-neutral-100: 0 0% 100%;
+    --clr-primary-900: 230 35% 7%;
+    --clr-primary-200: 231 77% 90%;
+
+    --ff-sans: 'Barlow', sans-serif;
+    --ff-sans-cond: 'Barlow Condensed', sans-serif;
+    --ff-serif: 'Bellefair', serif;
+
+    --fs-900: 9.375rem; /* 150px*/
+    --fs-800: 6.25rem; /* 100px */
+    --fs-700: 3.5rem; /* 56px */
+    --fs-600: 2rem; /* 32px */
+    --fs-500: 1.75rem; /* 28px */
+    --fs-400: 1.125rem; /* 18px */
+    --fs-300: 1rem; /* 16px */
+    --fs-200: 0.875rem; /* 14px */   
+}
+/* ============ */
+/* RESET        */
+/* ============ */
+
+/* Sets box sizing rules */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Sets root core defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Sets body core defaults */
+
+body {
+    text-rendering: optimizeSpeed;
+    min-height: 100vh;
+    line-height: 2;
+
+}
+
+/* Resets margin rules */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Removes unnecessary space caused by line-height*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+}
+
+/* Gives default styling to a elements without a class */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Removes default styling from ul and ol elements with the role of list */
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Makes images easier to work with */
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Inherits font styles for input elements and buttons */
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Removes animations and transitions for people who prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::after,
+    *::before {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
