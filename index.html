@@ -47,46 +47,50 @@
         type="button"
         class="mobile-nav-toggle"
         aria-controls="primary-nav"
+        aria-expanded="false"
       >
         <span class="sr-only">Mobile navigation menu</span>
       </button>
-      <ul
-        id="primary-nav"
-        class="primary-nav underline-indicators flex"
-        role="list"
-      >
-        <li class="active">
-          <a
-            href="index.html"
-            class="ff-sans-cond text-white uppercase letter-spacing-2"
-            ><span>00</span>Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="destination.html"
-            class="ff-sans-cond text-white uppercase letter-spacing-2"
-            ><span>01</span>Destination</a
-          >
-        </li>
-        <li>
-          <a
-            href="crew.html"
-            class="ff-sans-cond text-white uppercase letter-spacing-2"
-            ><span>02</span>Crew</a
-          >
-        </li>
-        <li>
-          <a
-            href="technology.html"
-            class="ff-sans-cond text-white uppercase letter-spacing-2"
-            ><span>03</span>Technology</a
-          >
-        </li>
-      </ul>
+      <nav>
+        <ul
+          id="primary-nav"
+          class="primary-nav underline-indicators flex"
+          data-visibility="false"
+          role="list"
+        >
+          <li class="active">
+            <a
+              href="index.html"
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              ><span>00</span>Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="destination.html"
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              ><span>01</span>Destination</a
+            >
+          </li>
+          <li>
+            <a
+              href="crew.html"
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              ><span>02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a
+              href="technology.html"
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              ><span>03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main id="main-content">
-      <div>
+    <main id="main-content" class="grid grid-container grid-container--home">
+      <div class="flow">
         <h1 class="ff-sans-cond fs-500 text-light uppercase letter-spacing-1">
           So, you want to travel to<span
             class="ff-serif fs-1200 text-white uppercase d-block"
