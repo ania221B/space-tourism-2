@@ -479,11 +479,13 @@ button {
 picture[data-visibility="true"], 
 article[data-visibility="true"] {
     opacity: 1;
+    transition: opacity 300ms ease-in-out 300ms;
 }
 
 picture[data-visibility="false"], 
 article[data-visibility="false"] {
     opacity: 0;
+    transition: opacity 300ms ease-in-out;
 }
 
 
