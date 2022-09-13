@@ -74,7 +74,7 @@ tabList.addEventListener('click', e => {
   tab.setAttribute('aria-selected', true)
 
   /* switch tab content */
-  hideContent(mainContainer, '[role = "tabpanel"]')
+  hideContent(mainContainer, '[role="tabpanel"]')
   showContent(mainContainer, `#${content}`)
 
   /* switch tab image */
