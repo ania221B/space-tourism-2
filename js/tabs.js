@@ -32,13 +32,30 @@ function showContent (parent, selector) {
 /* ================== */
 /* EXECUTION            */
 /* ================ */
-
+let currentIndex = 0
 tabList.addEventListener('keydown', e => {
   const leftArrow = 37
   const rightArrow = 39
 
   if (e.keyCode === leftArrow || e.keyCode === rightArrow) {
-    // tabs.forEach(t => t.setAttribute('tabindex', '-1'))
+    tabs.forEach(t => t.setAttribute('tabindex', -1))
+
+    if (e.keyCode === rightArrow) {
+      currentIndex++
+
+      if (currentIndex >= tabs.length) {
+        currentIndex = 0
+      }
+    } else if (e.keyCode === leftArrow) {
+      currentIndex--
+
+      if (currentIndex < 0) {
+        currentIndex = tabs.length - 1
+      }
+    }
+
+    tabs[currentIndex].setAttribute('tabindex', 0)
+    tabs[currentIndex].focus()
   }
 })
 
