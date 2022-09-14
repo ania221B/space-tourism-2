@@ -576,6 +576,10 @@ body {
     margin-bottom: 4rem;
 }
 
+.grid-container--crew {
+    padding-bottom: 0;
+}
+
 .grid-container--crew h2 {
     color:hsl(var(--clr-neutral-100) / .25);
     line-height: 1.5;
