@@ -247,7 +247,6 @@ button {
 .primary-header {
     align-content: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
 }
 
 .logo {
@@ -602,9 +601,10 @@ body {
     margin-top: 0.5rem;
 }
 
+
 .grid-container--destination > .numbered-title {
-    margin-bottom: 4rem;
-}
+    margin-bottom: 2rem;
+ }
 
 .grid-container--crew {
     padding-bottom: 0;
@@ -780,6 +780,10 @@ article[data-visibility="false"] {
             " . image content . ";
     } 
 
+    .grid-container--destination > .numbered-title {
+        margin-bottom: 4rem;
+     }
+
     .grid-container--destination > picture {
         justify-self: center;
         align-self: center;
@@ -827,14 +831,3 @@ article[data-visibility="false"] {
         justify-self: end;
     }
 }
-
-/*
-przycisk - 32 - 32 - 20
-przyciski numerowane - 32 - 24 - 16
-nagłówek z rolą - 32 - 24 - 16
-dane o planecie - 28
-so you want to - 28 - 20 - 16
-tabs - 16 - 16 - 14
-główny tekst - 18 - 16 - 15
-małe dane o planecie - 14 - 14 - 14
-*/
