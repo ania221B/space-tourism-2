@@ -119,61 +119,68 @@ To make websites easier to navigate for people who use keyboard only, you can ad
 ```css
 .skip-to-content {
   position: absolute;
-  padding: 0.5em 1em;
+  inset: 0 auto auto 0;
+  padding: 0.75em 1.5em;
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 
 .skip-to-content:focus {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 ```
 
-To see how you can add code snippets, see below:
+##### Content for screen readers only
+
+In situations where you have elements like buttons for slide switching that look like dots and therefore ones that don't screen-reader users much, it is a good practice to add text to the button and hide it using a class:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="dot-indicators">
+  <button type="button"><span class="sr-only">Launch vehicle</span></button>
+  <button type="button"><span class="sr-only">Spaceport</span></button>
+  <button type="button"><span class="sr-only">Space capsule</span></button>
+</div>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.sr-only {
+  position: absolute !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+##### Hidding content from screen readers
+
+If you have content that makes sens for sighted users, but is not really useful for people with impaired vision — like the numbering of navigation menu in this project — it is a good idea to hide it using `aria-hidden` attribute:
+
+```html
+<a href="page.html"><span aria-hidden="true">00</span>Home</a>
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+#### Using attributes instead of classes in JS
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+To build navigation menu and tabbed component from this project I would use classes that are added and removed with the use of JS. I learnt form the course that you can do the same by using attributes.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- Grid
+- JS
+- Accessibility
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@ania221B](https://www.frontendmentor.io/profile/ania221B)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I've rebuilt this website after completing the [Frontend Mentor x Scrimba x Kevin Powell course](https://scrimba.com/learn/spacetravel).
