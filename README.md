@@ -31,8 +31,8 @@ Users should be able to:
 ### Screenshot
 
 ![Mobile View](./screenshots/Frontend-Mentor-Space-tourism-website-home-mobile.png)
-![Tablet View](./screenshots/Frontend-Mentor-Space-tourism-website-home-mobile.png.jpg)
-![Desktop View](./screenshots/Frontend-Mentor-Space-tourism-website-home-desktop.png.jpg)
+![Tablet View](./screenshots/Frontend-Mentor-Space-tourism-website-home-tablet.png)
+![Desktop View](./screenshots/Frontend-Mentor-Space-tourism-website-home-desktop.png)
 
 ### Links
 
