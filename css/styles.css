@@ -342,6 +342,10 @@ button {
 }
 
 @media (min-width: 35em) and (max-width: 45em) {
+    .primary-header {
+        margin-bottom: 2rem;
+    }
+
     .primary-nav a > span {
         display: none;
     }
@@ -574,6 +578,7 @@ body {
 .grid-container {
     text-align: center;
     padding-bottom: 2rem;
+    grid-template-columns: 2rem 1fr 2rem;
     place-items: center;
 }
 
@@ -582,46 +587,12 @@ body {
     margin-inline: auto;
 }
 
-@media (max-width: 45em) {
-    .grid-container--destination p:not([class]) {
-        max-width: 65ch;
-        margin-inline: auto;
-    }
-}
-
 .numbered-title {
     grid-area: title;
 }
 
 .numbered-title > span {
    margin-right: 1.5rem; 
-}
-
-.grid-container--home h1 > span {
-    margin-top: 0.5rem;
-}
-
-
-.grid-container--destination > .numbered-title {
-    margin-bottom: 2rem;
- }
-
-.grid-container--crew {
-    padding-bottom: 0;
-}
-
-.grid-container--crew h2 {
-    color:hsl(var(--clr-neutral-100) / .25);
-    line-height: 1.5;
-}
-
-.grid-container--technology h2 {
-    margin-bottom: 1rem;
-}
-
-.grid-container--crew h2 + p,
-.grid-container--technology h2 + p {
-    line-height: 1.1;
 }
 
 picture[data-visibility="true"], 
@@ -636,6 +607,16 @@ article[data-visibility="false"] {
     transition: opacity 300ms ease-in-out;
 }
 
+/* home */
+
+.grid-container--home > * {
+    grid-column: 2;
+}
+
+.grid-container--home h1 > span {
+    margin-top: 0.5rem;
+}
+
 /* destination */
 
 .grid-container--destination {
@@ -644,7 +625,14 @@ article[data-visibility="false"] {
         " . image . "
         " . tabs . "
         " . content . ";
+    row-gap: 2rem;
 } 
+
+.grid-container--destination p:not([class]) {
+    max-width: 65ch;
+    margin-inline: auto;
+}
+
 
 .grid-container--destination > picture {
     grid-area: image;
@@ -672,15 +660,23 @@ article[data-visibility="false"] {
 /* crew */
 
 .grid-container--crew {
+    --gap: 1rem;
+    padding-bottom: 0;
     grid-template-areas: 
         ". title ."
         " . image . "
         " . tabs . "
         " . content . ";
+
 } 
 
-.grid-container--crew {
-    --gap: 1rem;
+.grid-container--crew h2 {
+    color:hsl(var(--clr-neutral-100) / .25);
+    line-height: 1.5;
+}
+
+.grid-container--crew h2 + p {
+    line-height: 1.1;
 }
 
 .grid-container--crew > picture {
@@ -703,12 +699,19 @@ article[data-visibility="false"] {
 /* technology */
 
 .grid-container--technology {
-    grid-template-columns: minmax(0, 2rem) 1fr minmax(0, 2rem);
     grid-template-areas: 
         ". title ."
         " image image image "
         " . tabs . "
         " . content . ";
+}
+
+.grid-container--technology h2 {
+    margin-bottom: 1rem;
+}
+
+.grid-container--technology h2 + p {
+    line-height: 1.1;
 }
 
 .grid-container--technology > picture {
@@ -754,9 +757,11 @@ article[data-visibility="false"] {
 
     .grid-container {
         text-align: left;
-        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(.5rem, 1fr);
+        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 35rem)) minmax(.5rem, 1fr);
         column-gap: var(--container-gap, 2rem);
     }
+
+    /* home */
 
     .grid-container--home {
         align-items: end;        
@@ -770,6 +775,8 @@ article[data-visibility="false"] {
     .grid-container--home > *:last-child {
         grid-column: 3;
     }
+
+    /* destination */
 
     .grid-container--destination {
         align-content: center;
@@ -793,11 +800,18 @@ article[data-visibility="false"] {
     .grid-container--destination > .tab-list {
         justify-self: start;
     } 
+
+    .grid-container--destination p:not([class]) {
+        max-width: 45ch;
+        margin-inline: auto;
+    }
     
     .destination__details {
         --gap: clamp(1rem, 6vw, 4rem);
         justify-content: start;
     }
+
+    /* crew */
 
     .grid-container--crew {
         justify-items: start;
@@ -813,6 +827,7 @@ article[data-visibility="false"] {
         max-width: 100%;
     }
 
+    /* technology */
 
     .grid-container--technology {
         grid-template-columns: minmax(.5rem, 1fr) min-content repeat(2, minmax(0, 35rem)) minmax(.5rem, 1fr);
