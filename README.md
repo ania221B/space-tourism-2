@@ -1,6 +1,6 @@
 # Frontend Mentor - Space tourism website solution
 
-This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -30,20 +30,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile View](./screenshots/Frontend-Mentor-Space-tourism-website-home-mobile.png)
+![Tablet View](./screenshots/Frontend-Mentor-Space-tourism-website-home-mobile.png.jpg)
+![Desktop View](./screenshots/Frontend-Mentor-Space-tourism-website-home-desktop.png.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/ania221B/space-tourism-2)
+- Live Site URL: [GitHub Pages](https://ania221b.github.io/space-tourism-2/index.html)
 
 ## My process
 
@@ -54,30 +48,103 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### Colors
+
+I've learnt the new hsl color notation and how to use it in custom properties to manipulate the opacity.
+
+Instead of writing:
+
+```css
+--clr-primary: hsl(230, 35%, 7%);
+```
+
+You use just the numbers without any commas:
+
+```css
+--clr-primary: 230 35% 7%;
+```
+
+Later, in order to use the color, you need to remember about writing hsl(). If you want to change opacity, you add it after a backslash:
+
+```css
+.bg-primary-medium {
+  background-color: hsl(var(--clr-primary) / 0.5);
+}
+```
+
+You don't need to write `hsla()` for the alpha channel to work.
+
+#### Paddings
+
+You can use clamp(), min() and max() functions for paddings to get them grow and shrink without media queries:
+
+```css
+.element-1 {
+  padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.element-2 {
+  padding-block: min(4rem, 20vh);
+}
+```
+
+#### Fonts
+
+You can use clamp() for fonts. It's a good idea to use `+1rem` for the middle value so that font size is always in `rem`:
+
+```css
+--fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
+```
+
+#### Accessibility
+
+##### Skip to content link
+
+To make websites easier to navigate for people who use keyboard only, you can add a link enabling them to jump straight to main content without having to tab through the navigation menu. The `href` attribute needs to point to the `id` of main content and it's good to have `aria-label` describing what the link does. The link can be hidden with positioning and transforms.
+
+```html
+<a
+  href="#main-content"
+  class="skip-to-content"
+  aria-label="skip to main content"
+  >Skip to content</a
+>
+
+<main id="main-content"></main>
+```
+
+```css
+.skip-to-content {
+  position: absolute;
+  padding: 0.5em 1em;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.skip-to-content:focus {
+}
+```
 
 To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
