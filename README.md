@@ -12,11 +12,8 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -93,7 +90,7 @@ You can use clamp(), min() and max() functions for paddings to get them grow and
 
 #### Fonts
 
-You can use clamp() for fonts. It's a good idea to use `+1rem` for the middle value so that font size is always in `rem`:
+You can use clamp() for fonts. It's a good idea to use `+1rem` for the middle (preferred) value so that font size is always in `rem`:
 
 ```css
 --fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
@@ -135,7 +132,7 @@ To make websites easier to navigate for people who use keyboard only, you can ad
 
 ##### Content for screen readers only
 
-In situations where you have elements like buttons for slide switching that look like dots and therefore ones that don't screen-reader users much, it is a good practice to add text to the button and hide it using a class:
+In situations where you have elements like buttons for slide switching that look like dots and therefore ones that don't tell screen-reader users much, it is a good practice to add text to the button and hide it using a class:
 
 ```html
 <div class="dot-indicators">
@@ -161,15 +158,87 @@ In situations where you have elements like buttons for slide switching that look
 
 ##### Hidding content from screen readers
 
-If you have content that makes sens for sighted users, but is not really useful for people with impaired vision — like the numbering of navigation menu in this project — it is a good idea to hide it using `aria-hidden` attribute:
+If you have content that makes sense for sighted users, but is not really useful for people with impaired vision — like the numbering of navigation menu in this project — it is a good idea to hide it using `aria-hidden` attribute:
 
 ```html
 <a href="page.html"><span aria-hidden="true">00</span>Home</a>
 ```
 
+#### `aria-controls` attribute
+
+The `aria-controls` attribute should be placed on an element which impacts presence or contents of another element in the document.
+
+An element that controls another is called a control. An example would be a tab that displays a tab panel associated with it: the tab has `role="tab"` and `aria-controls` pointing to the `tabpanel` it controls.
+
+```html
+<button
+  type="button"
+  role="tab"
+  tabindex="0"
+  aria-selected="true"
+  aria-controls="moon"
+>
+  Moon
+</button>
+
+<article id="moon" role="tabpanel">...</article>
+```
+
+##### `tabindex` attribute
+
+The `tabindex` attribute allows elements to gain focus.
+The attribute has an integer as a value. In order to make it work in an accessible way, it should have the value of zero or a negative number. A negative value means the element can't be navigated to with the keyboard's `Tab` key but that it can gain focus with the use of JS or by clicking.
+`tabindex=0` means that the item can be navigated to with the use of `Tab` key.
+
 #### Using attributes instead of classes in JS
 
-To build navigation menu and tabbed component from this project I would use classes that are added and removed with the use of JS. I learnt form the course that you can do the same by using attributes.
+To build navigation menu and tabbed component from this project, I would use classes that are added and removed with the use of JS. I learnt form the course that you can do the same by using attributes.
+
+```html
+<button
+  type="button"
+  class="mobile-nav-toggle"
+  aria-controls="primary-nav"
+  aria-expanded="false"
+>
+  <span class="sr-only">Mobile Navigation Menu</span>
+</button>
+
+<nav>
+  <ul id="primary-nav" class="primary-nav" data-visibility="false">
+    <li>
+      <a><span aria-hidden="true">00</span>Page 1</a>
+    </li>
+    <li>
+      <a><span aria-hidden="true">01</span>Page 2</a>
+    </li>
+    <li>
+      <a><span aria-hidden="true">02</span>Page 3</a>
+    </li>
+  </ul>
+</nav>
+```
+
+```js
+const toggleButton = document.querySelector(".mobile-nav-toggle");
+const nav = document.querySelector(".primary-nav");
+
+toggleButton.addEventListener("click", (e) => {
+  const expanded = toggleButton.getAttribute("aria-expanded");
+
+  if (expanded === "false") {
+    toggleButton.setAttribute("aria-expanded", true);
+    nav.setAttribute("data-visibility", true);
+  } else {
+    toggleButton.setAttribute("aria-expanded", false);
+    nav.setAttribute("data-visibility", false);
+  }
+});
+```
+
+#### Layout
+
+I couldn't build this layout properly, because I tried to make the components one piece, so for example I would put the tab buttons inside a div together with the content. In order to make it work, individual elements had to be separate.
 
 ### Continued development
 
