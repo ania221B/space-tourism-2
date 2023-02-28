@@ -1,114 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
 
-    <link href="css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet" />
 
-    <title>Frontend Mentor | Space tourism website</title>
+  <link href="css/styles.css" rel="stylesheet" />
 
-    <script src="js/navigation.js" defer></script>
-  </head>
-  <body class="home">
-    <header class="primary-header flex">
-      <a
-        href="#main-content"
-        class="skip-to-content ff-sans-cond text-dark bg-white"
-        aria-label="skip to content"
-        >Skip to content</a
-      >
-      <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-          <g fill="none" fill-rule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
-      </div>
-      <button
-        type="button"
-        class="mobile-nav-toggle"
-        aria-controls="primary-nav"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Mobile navigation menu</span>
-      </button>
-      <nav>
-        <ul
-          id="primary-nav"
-          class="primary-nav underline-indicators flex"
-          data-visibility="false"
-          role="list"
-        >
-          <li class="active">
-            <a
-              href="index.html"
-              class="ff-sans-cond text-white uppercase letter-spacing-2"
-              ><span aria-hidden="true">00</span>Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="destination.html"
-              class="ff-sans-cond text-white uppercase letter-spacing-2"
-              ><span aria-hidden="true">01</span>Destination</a
-            >
-          </li>
-          <li>
-            <a
-              href="crew.html"
-              class="ff-sans-cond text-white uppercase letter-spacing-2"
-              ><span aria-hidden="true">02</span>Crew</a
-            >
-          </li>
-          <li>
-            <a
-              href="technology.html"
-              class="ff-sans-cond text-white uppercase letter-spacing-2"
-              ><span aria-hidden="true">03</span>Technology</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main id="main-content" class="grid grid-container grid-container--home">
-      <div class="flow">
-        <h1 class="ff-sans-cond fs-500 text-light uppercase letter-spacing-1">
-          So, you want to travel to<span
-            class="ff-serif fs-1200 text-white uppercase d-block"
-            >Space</span
-          >
-        </h1>
-        <p>
-          Let’s face it; if you want to go to space, you might as well genuinely
-          go to outer space and not hover kind of on the edge of it. Well sit
-          back, and relax because we’ll give you a truly out of this world
-          experience!
-        </p>
-      </div>
-      <a
-        href="destination.html"
-        class="large-btn ff-serif fs-700 text-dark uppercase bg-white"
-        >Explore</a
-      >
-    </main>
-  </body>
+  <title>Frontend Mentor | Space tourism website</title>
+
+  <script src="js/navigation.js" defer></script>
+</head>
+
+<body class="home">
+  <header class="primary-header flex">
+    <a href="#main-content" class="skip-to-content ff-sans-cond text-dark bg-white" aria-label="skip to content">Skip to content</a>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="24" cy="24" r="24" fill="#FFF" />
+          <path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z" />
+        </g>
+      </svg>
+    </div>
+    <button type="button" class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="sr-only">Mobile navigation menu</span>
+    </button>
+    <nav id="primary-nav" class="primary-nav" data-state="closed">
+      <ul class="primary-nav__list underline-indicators flex" role="list">
+        <li class="active">
+          <a href="index.html" class="ff-sans-cond text-white uppercase letter-spacing-2"><span aria-hidden="true">00</span>Home</a>
+        </li>
+        <li>
+          <a href="destination.html" class="ff-sans-cond text-white uppercase letter-spacing-2"><span aria-hidden="true">01</span>Destination</a>
+        </li>
+        <li>
+          <a href="crew.html" class="ff-sans-cond text-white uppercase letter-spacing-2"><span aria-hidden="true">02</span>Crew</a>
+        </li>
+        <li>
+          <a href="technology.html" class="ff-sans-cond text-white uppercase letter-spacing-2"><span aria-hidden="true">03</span>Technology</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content" class="grid grid-container grid-container--home">
+    <div class="flow">
+      <h1 class="ff-sans-cond fs-500 text-light uppercase letter-spacing-1">
+        So, you want to travel to<span class="ff-serif fs-1200 text-white uppercase d-block">Space</span>
+      </h1>
+      <p>
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+    <a href="destination.html" class="large-btn ff-serif fs-700 text-dark uppercase bg-white">Explore</a>
+  </main>
+</body>
+
 </html>
